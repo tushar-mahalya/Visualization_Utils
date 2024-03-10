@@ -1,3 +1,19 @@
+def data_discription(data):
+    n = data.shape[0]
+    add_desc_df = pd.DataFrame()
+    add_desc_df['range'] = data.max() - data.min()
+    add_desc_df['skew'] = data.skew()
+    add_desc_df['kurt'] = data.kurt()
+    add_desc_df['NaN'] = data.isnull().sum()
+    add_desc_df['NaN (in %)'] = (add_desc_df['NaN']/n)*100
+    add_desc_df['Duplicate'] = data.duplicated(keep=False).sum()
+    add_desc_df['Duplicate (in %)'] = (add_desc_df['Duplicate']/n)*100
+    
+    desc_df = data.describe().T.drop(['count'], axis = 1)
+    info_df = pd.concat([desc_df, add_desc_df], axis = 1).style.background_gradient(cmap = 'Reds', axis = 1).format(formatter = '{:,.2f}')
+    
+    return info_df
+
 def MakeContColPlots(train_df, test_df, cont_cols):
     grid_specs = {'visible': True, 'which': 'both', 'linestyle': '--', 
                   'color': 'lightgrey', 'linewidth': 0.75};
