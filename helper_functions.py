@@ -1,4 +1,19 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+
 def data_discription(data):
+    """
+    Calculate various statistics and descriptions for a given dataset.
+
+    Parameters:
+    - data (pd.DataFrame): Input dataset.
+
+    Returns:
+    - Stylishly formatted DataFrame with statistics and descriptions.
+    """
     n = data.shape[0]
     add_desc_df = pd.DataFrame()
     add_desc_df['range'] = data.max() - data.min()
@@ -13,8 +28,21 @@ def data_discription(data):
     info_df = pd.concat([desc_df, add_desc_df], axis = 1).style.background_gradient(cmap = 'Reds', axis = 1).format(formatter = '{:,.2f}')
     
     return info_df
-
+    
+# Code Credit - RAVI RAMAKRISHNAN (https://www.kaggle.com/ravi20076)
 def MakeContColPlots(train_df, test_df, cont_cols):
+    """
+    Generate distribution plots for continuous columns in both training and testing datasets.
+
+    Parameters:
+    - train_df (pd.DataFrame): Training dataset.
+    - test_df (pd.DataFrame): Testing dataset.
+    - cont_cols (list): List of continuous column names.
+    - plot_colors (list): List of colors for plotting.
+
+    Returns:
+    - Displayed distribution plots.
+    """
     grid_specs = {'visible': True, 'which': 'both', 'linestyle': '--', 
                   'color': 'lightgrey', 'linewidth': 0.75};
     title_specs = {'fontsize': 9, 'fontweight': 'bold', 'color': '#992600'};
