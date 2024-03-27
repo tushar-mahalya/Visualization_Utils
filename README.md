@@ -15,13 +15,13 @@ You can install these libraries using pip:
 
 ```bash
 pip install pandas numpy matplotlib seaborn
-
-Functions
-data_discription
+```
+## Functions
+### `data_discription`
 The data_discription function provides a comprehensive statistical summary of a given dataset. It calculates the range, skewness, kurtosis, and the number of NaN values and duplicates in each column.
 
 Usage:
-
+```bash
 from helper_functions import data_discription
 
 # Load your data
@@ -32,12 +32,12 @@ desc = data_discription(data)
 
 # Print the description
 print(desc)
-
-MakeContColPlots
+```
+### `MakeContColPlots`
 The MakeContColPlots function generates distribution plots for continuous columns in both training and testing datasets. This is particularly useful for visualizing and comparing the distribution of variables in your training and testing sets.
 
 Usage:
-
+```bash
 from helper_functions import MakeContColPlots
 
 # Load your data
@@ -49,9 +49,9 @@ cont_cols = ['col1', 'col2', 'col3']
 
 # Generate the plots
 MakeContColPlots(train_data, test_data, cont_cols)
-
-Contributing
+```
+## Contributing
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-License
+## License
 This project is licensed under the terms of the MIT license.
