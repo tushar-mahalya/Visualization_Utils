@@ -12,34 +12,31 @@ To use these functions, you need to have Python installed along with the followi
 - matplotlib
 - seaborn
 
-You can install these libraries using pip:
+You can install these libraries along with complete package using pip:
 
 ```bash
-pip install pandas numpy matplotlib seaborn
+pip install git+https://github.com/tushar-mahalya/Visualization_Utils.git
 ```
 ## Functions
 ### `data_discription`
 The data_discription function provides a comprehensive statistical summary of a given dataset. It calculates the range, skewness, kurtosis, and the number of NaN values and duplicates in each column.
 
 Usage:
-```bash
-from helper_functions import data_discription
+```python
+from Visualization_Utils.helper_functions import data_discription
 
 # Load your data
 data = pd.read_csv('your_data.csv')
 
 # Get the data description
-desc = data_discription(data)
-
-# Print the description
-print(desc)
+data_discription(data)
 ```
 ### `MakeContColPlots`
 The MakeContColPlots function generates distribution plots for continuous columns in both training and testing datasets. This is particularly useful for visualizing and comparing the distribution of variables in your training and testing sets.
 
 Usage:
-```bash
-from helper_functions import MakeContColPlots
+```python
+from Visualization_Utils.helper_functions import MakeContColPlots
 
 # Load your data
 train_data = pd.read_csv('train_data.csv')
