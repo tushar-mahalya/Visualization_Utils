@@ -23,6 +23,7 @@ The data_discription function provides a comprehensive statistical summary of a 
 
 Usage:
 ```python
+import pandas as pd
 from Visualization_Utils.helper_functions import data_discription
 
 # Load your data
@@ -36,6 +37,7 @@ The MakeContColPlots function generates distribution plots for continuous column
 
 Usage:
 ```python
+import pandas as pd
 from Visualization_Utils.helper_functions import MakeContColPlots
 
 # Load your data
